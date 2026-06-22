@@ -1,5 +1,5 @@
 import React from 'react';
-import { useGame } from '../context/GameContext';
+import { useGame } from '../core/context/GameContext';
 
 export default function UrbanPlanningOverlay({ isValidating, validationData, config, buildingType, onConfirm, onCancel }) {
   const { gameState } = useGame();

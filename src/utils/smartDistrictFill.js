@@ -1,7 +1,7 @@
 import * as turf from '@turf/turf';
-import buildingsConfig from '../data/buildings_config.json';
+import buildingsConfig from '../config/buildings_config.json';
 import { validatePolygonAgainstVisualWater } from './visualWaterValidator';
-import { checkLevelRequirements } from '../planning/districtValidation';
+import { checkLevelRequirements } from '../engines/planning/districtValidation';
 
 export async function generateDistrictFromSeed({
   buildingType,

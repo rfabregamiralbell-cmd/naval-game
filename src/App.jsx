@@ -1,23 +1,23 @@
 import React, { useState } from 'react';
-import { useGame } from './context/GameContext';
-import GameMap from './components/GameMap';
-import TownHallPopup from './components/TownHallPopup';
-import EconomyPanel from './ui/EconomyPanel';
-import resourcesConfig from './data/resources_config.json';
-import { getActiveBalanceConfig } from './economy/economyEngine';
+import { useGame } from './core/context/GameContext';
+import GameMap from './map/GameMap';
+import TownHallPopup from './map/TownHallPopup';
+import EconomyPanel from './panels/EconomyPanel';
+import resourcesConfig from './config/resources_config.json';
+import { getActiveBalanceConfig } from './engines/economy/economyEngine';
 
 // Import new City panels
-import CityPanel from './ui/CityPanel';
-import UniversityPanel from './ui/UniversityPanel';
-import PortPanel from './ui/PortPanel';
-import ShipyardPanel from './ui/ShipyardPanel';
-import WarehousePanel from './ui/WarehousePanel';
-import GoodsMarketPanel from './ui/GoodsMarketPanel';
-import BankPanel from './ui/BankPanel';
-import CityLifePanel from './ui/CityLifePanel';
-import CrewPanel from './ui/CrewPanel';
-import MapLayersPanel from './ui/MapLayersPanel';
-import MilitaryDefensePanel from './ui/MilitaryDefensePanel';
+import CityPanel from './panels/CityPanel';
+import UniversityPanel from './panels/UniversityPanel';
+import PortPanel from './panels/PortPanel';
+import ShipyardPanel from './panels/ShipyardPanel';
+import WarehousePanel from './panels/WarehousePanel';
+import GoodsMarketPanel from './panels/GoodsMarketPanel';
+import BankPanel from './panels/BankPanel';
+import CityLifePanel from './panels/CityLifePanel';
+import CrewPanel from './panels/CrewPanel';
+import MapLayersPanel from './panels/MapLayersPanel';
+import MilitaryDefensePanel from './panels/MilitaryDefensePanel';
 
 function App() {
   const { gameState, resetGame, setIsListOpen } = useGame();
