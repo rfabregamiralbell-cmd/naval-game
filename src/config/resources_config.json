@@ -275,8 +275,8 @@
     "uses": ["export", "morale"],
     "description": "Hojas curadas de tabaco para el monopolio de la Real Fábrica de Sevilla."
   },
-  "cacao": {
-    "id": "cacao",
+  "cocoa": {
+    "id": "cocoa",
     "name": "Cacao",
     "icon": "🍫",
     "category": "colonialGoods",

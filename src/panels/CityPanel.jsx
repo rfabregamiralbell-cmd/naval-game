@@ -31,18 +31,21 @@ export default function CityPanel({ onClose, onOpenCenter }) {
     const reqTypes = center.requiredDistrictTypes || [];
     const district = districts.find(d => reqTypes.includes(d.type) && d.status === 'operational');
     
-    if (district && district.geometry && district.geometry.coordinates && window.map) {
-      // coordinates is [[[lng, lat], [lng, lat], ...]]
-      const coords = district.geometry.coordinates[0];
-      if (coords && coords.length > 0) {
-        // Calculate bounds
-        const lats = coords.map(c => c[1]);
-        const lngs = coords.map(c => c[0]);
-        const minLat = Math.min(...lats);
-        const maxLat = Math.max(...lats);
-        const minLng = Math.min(...lngs);
-        const maxLng = Math.max(...lngs);
-        window.map.fitBounds([[minLat, minLng], [maxLat, maxLng]], { padding: [20, 20], maxZoom: 17 });
+    if (district && (district.geometry || district.polygon) && window.map) {
+      const geom = district.geometry || district.polygon;
+      if (geom.coordinates) {
+        // coordinates is [[[lng, lat], [lng, lat], ...]]
+        const coords = geom.coordinates[0];
+        if (coords && coords.length > 0) {
+          // Calculate bounds
+          const lats = coords.map(c => c[1]);
+          const lngs = coords.map(c => c[0]);
+          const minLat = Math.min(...lats);
+          const maxLat = Math.max(...lats);
+          const minLng = Math.min(...lngs);
+          const maxLng = Math.max(...lngs);
+          window.map.fitBounds([[minLat, minLng], [maxLat, maxLng]], { padding: [20, 20], maxZoom: 17 });
+        }
       }
       onClose(); // Close the panel to see the map
     }

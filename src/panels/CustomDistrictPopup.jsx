@@ -35,6 +35,8 @@ export default function CustomDistrictPopup({ districtId, onClose, onStartExpans
   
   const district = gameState.customDistricts?.find(d => d.id === districtId);
   
+  const [showDemolishConfirm, setShowDemolishConfirm] = useState(false);
+
   const [now, setNow] = useState(Date.now());
   useEffect(() => {
     const timer = setInterval(() => {
@@ -70,8 +72,6 @@ export default function CustomDistrictPopup({ districtId, onClose, onStartExpans
   };
 
   const refund = calculateRefund();
-
-  const [showDemolishConfirm, setShowDemolishConfirm] = useState(false);
 
   // Handle worker modification
   const handleModifyWorkers = (amount) => {
@@ -126,8 +126,9 @@ export default function CustomDistrictPopup({ districtId, onClose, onStartExpans
     setGameState(prev => ({
       ...prev,
       resources: {
-        gold: prev.resources.gold + refund.gold,
-        wood: prev.resources.wood + refund.wood
+        ...prev.resources,
+        gold: (prev.resources?.gold || 0) + refund.gold,
+        wood: (prev.resources?.wood || 0) + refund.wood
       },
       customDistricts: prev.customDistricts.filter(d => d.id !== district.id)
     }));
