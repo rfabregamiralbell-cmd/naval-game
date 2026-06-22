@@ -1,0 +1,17 @@
+{
+  "mode": "testing",
+  "testing": {
+    "economyCycleMs": 10000,
+    "constructionTimeMultiplier": 0.01,
+    "productionMultiplier": 20,
+    "populationGrowthMultiplier": 20,
+    "offlineMaxCycles": 100
+  },
+  "production": {
+    "economyCycleMs": 300000,
+    "constructionTimeMultiplier": 1,
+    "productionMultiplier": 1,
+    "populationGrowthMultiplier": 1,
+    "offlineMaxCycles": 288
+  }
+}

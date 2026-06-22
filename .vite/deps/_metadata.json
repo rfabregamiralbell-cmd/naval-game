@@ -1,0 +1,54 @@
+{
+  "hash": "a6e21ac0",
+  "configHash": "c07a4c0d",
+  "lockfileHash": "c44ef3b7",
+  "browserHash": "9554dedf",
+  "optimized": {
+    "@turf/turf": {
+      "src": "../../node_modules/@turf/turf/dist/es/index.js",
+      "file": "@turf_turf.js",
+      "fileHash": "cfb043f2",
+      "needsInterop": false
+    },
+    "leaflet": {
+      "src": "../../node_modules/leaflet/dist/leaflet-src.js",
+      "file": "leaflet.js",
+      "fileHash": "6a507ada",
+      "needsInterop": true
+    },
+    "react-dom/client": {
+      "src": "../../node_modules/react-dom/client.js",
+      "file": "react-dom_client.js",
+      "fileHash": "5d63f181",
+      "needsInterop": true
+    },
+    "react-leaflet": {
+      "src": "../../node_modules/react-leaflet/lib/index.js",
+      "file": "react-leaflet.js",
+      "fileHash": "d1e7f949",
+      "needsInterop": false
+    },
+    "react": {
+      "src": "../../node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "67cb7df6",
+      "needsInterop": true
+    },
+    "react/jsx-dev-runtime": {
+      "src": "../../node_modules/react/jsx-dev-runtime.js",
+      "file": "react_jsx-dev-runtime.js",
+      "fileHash": "75a1f5e2",
+      "needsInterop": true
+    }
+  },
+  "chunks": {
+    "chunk-B-1-B7_t": {
+      "file": "chunk-B-1-B7_t.js",
+      "isDynamicEntry": false
+    },
+    "react-dom-BRJs3cXW": {
+      "file": "react-dom-BRJs3cXW.js",
+      "isDynamicEntry": false
+    }
+  }
+}

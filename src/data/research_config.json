@@ -1,0 +1,72 @@
+{
+  "rotacion_cultivos": {
+    "id": "rotacion_cultivos",
+    "name": "Rotación de cultivos",
+    "branch": "Agricultura",
+    "description": "Alterna cultivos para mantener la fertilidad de la tierra, incrementando la producción agrícola.",
+    "cost": { "gold": 800, "materials": 200 },
+    "durationBaseSec": 120,
+    "effect": { "type": "production_bonus", "target": "hacienda", "value": 0.1 },
+    "icon": "🌱"
+  },
+  "herramientas_estandarizadas": {
+    "id": "herramientas_estandarizadas",
+    "name": "Herramientas estandarizadas",
+    "branch": "Construcción",
+    "description": "Unifica el diseño de palas, picos y martillos para acelerar el ritmo de las obras.",
+    "cost": { "gold": 1000, "materials": 300 },
+    "durationBaseSec": 180,
+    "effect": { "type": "construction_time_reduction", "value": 0.05 },
+    "icon": "🔨"
+  },
+  "contabilidad_mercantil": {
+    "id": "contabilidad_mercantil",
+    "name": "Contabilidad mercantil",
+    "branch": "Comercio",
+    "description": "Optimiza la recaudación tributaria y el cobro de aranceles en el puerto colonial.",
+    "cost": { "gold": 1200, "materials": 200 },
+    "durationBaseSec": 180,
+    "effect": { "type": "aduana_gold_bonus", "value": 0.1 },
+    "icon": "📜"
+  },
+  "jarcia_reforzada": {
+    "id": "jarcia_reforzada",
+    "name": "Jarcia reforzada",
+    "branch": "Náutica",
+    "description": "Investiga métodos de costura y tensado para mejorar la eficiencia del velamen.",
+    "cost": { "gold": 600, "materials": 150 },
+    "durationBaseSec": 90,
+    "effect": { "type": "unlock_ship_upgrade", "upgradeId": "velas_reforzadas" },
+    "icon": "⚓"
+  },
+  "baterias_costeras": {
+    "id": "baterias_costeras",
+    "name": "Baterías costeras",
+    "branch": "Militar",
+    "description": "Disposición táctica de piezas de artillería pesada para defender el fuerte contra incursiones.",
+    "cost": { "gold": 1500, "materials": 400 },
+    "durationBaseSec": 240,
+    "effect": { "type": "fortaleza_defense_bonus", "value": 10 },
+    "icon": "💣"
+  },
+  "escribania_central": {
+    "id": "escribania_central",
+    "name": "Escribanía central",
+    "branch": "Administración",
+    "description": "Agiliza la burocracia colonial y el registro de tierras portuarias.",
+    "cost": { "gold": 900, "materials": 200 },
+    "durationBaseSec": 120,
+    "effect": { "type": "admin_limit_bonus", "value": 1 },
+    "icon": "✒️"
+  },
+  "ocio_urbano": {
+    "id": "ocio_urbano",
+    "name": "Ocio urbano",
+    "branch": "Moral",
+    "description": "Desarrolla tabernas, ferias locales y plazas para entretener a los ciudadanos.",
+    "cost": { "gold": 500, "materials": 100 },
+    "durationBaseSec": 60,
+    "effect": { "type": "morale_bonus", "value": 5 },
+    "icon": "🎻"
+  }
+}

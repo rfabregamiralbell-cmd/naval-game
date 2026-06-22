@@ -1,0 +1,91 @@
+{
+  "sugar": {
+    "key": "sugar",
+    "name": "Caña de Azúcar",
+    "resourceProduced": "sugar",
+    "productionMultiplier": 1.0,
+    "description": "Produce azúcar colonial en gran volumen. Requiere Almacenes amplios.",
+    "icon": "🎋",
+    "requirements": {
+      "cabildoLevel": 1,
+      "buildings": ["almacen"]
+    }
+  },
+  "tobacco": {
+    "key": "tobacco",
+    "name": "Tabaco",
+    "resourceProduced": "tobacco",
+    "productionMultiplier": 0.5,
+    "description": "Produce tabaco de alta calidad. Crecimiento lento pero muy valioso comercialmente.",
+    "icon": "🍂",
+    "requirements": {
+      "cabildoLevel": 2
+    }
+  },
+  "cocoa": {
+    "key": "cocoa",
+    "name": "Cacao",
+    "resourceProduced": "cocoa",
+    "productionMultiplier": 0.8,
+    "description": "Cacao fino de aroma, muy cotizado por la nobleza europea.",
+    "icon": "🍫",
+    "requirements": {
+      "cabildoLevel": 2
+    }
+  },
+  "coffee": {
+    "key": "coffee",
+    "name": "Café",
+    "resourceProduced": "coffee",
+    "productionMultiplier": 0.7,
+    "description": "Grano de café aromático cultivado en laderas húmedas.",
+    "icon": "☕",
+    "requirements": {
+      "cabildoLevel": 2
+    }
+  },
+  "cotton": {
+    "key": "cotton",
+    "name": "Algodón",
+    "resourceProduced": "cotton",
+    "productionMultiplier": 1.2,
+    "description": "Fibra textil básica para velas de barcos e industrias manufactureras.",
+    "icon": "☁️",
+    "requirements": {
+      "cabildoLevel": 1
+    }
+  },
+  "grain": {
+    "key": "grain",
+    "name": "Campos de Grano",
+    "resourceProduced": "grain",
+    "productionMultiplier": 1.5,
+    "description": "Alimento básico de trigo y maíz que mejora la estabilidad demográfica.",
+    "icon": "🌾",
+    "requirements": {
+      "cabildoLevel": 1
+    }
+  },
+  "leather": {
+    "key": "leather",
+    "name": "Ganadería y Cueros",
+    "resourceProduced": "leather",
+    "productionMultiplier": 0.9,
+    "description": "Cueros curtidos y carne salada para el avituallamiento de las flotas.",
+    "icon": "🥩",
+    "requirements": {
+      "cabildoLevel": 1
+    }
+  },
+  "salt": {
+    "key": "salt",
+    "name": "Salinas",
+    "resourceProduced": "salt",
+    "productionMultiplier": 1.3,
+    "description": "Extracción de sal marina para la conservación de alimentos a bordo.",
+    "icon": "🧂",
+    "requirements": {
+      "cabildoLevel": 1
+    }
+  }
+}

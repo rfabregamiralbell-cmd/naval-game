@@ -1,0 +1,77 @@
+[
+  {
+    "id": "cap_novato",
+    "name": "Pedro Alarcón",
+    "title": "Capitán Novato",
+    "rarity": "Común",
+    "upkeep": 10,
+    "cost": { "gold": 200, "crew": 1 },
+    "stats": {
+      "tradeBonus": 0,
+      "riskReduction": 0.05,
+      "speedBonus": 0,
+      "defenseBonus": 0
+    },
+    "description": "Joven oficial graduado de la escuela de náutica de Sevilla. Sin mucha experiencia pero entusiasta."
+  },
+  {
+    "id": "cap_comerciante",
+    "name": "Alonso de Cózar",
+    "title": "Capitán Comerciante",
+    "rarity": "Poco Común",
+    "upkeep": 25,
+    "cost": { "gold": 500, "crew": 1 },
+    "stats": {
+      "tradeBonus": 0.15,
+      "riskReduction": 0.10,
+      "speedBonus": 0,
+      "defenseBonus": -0.05
+    },
+    "description": "Veterano de las flotas de Indias. Conoce los mejores mercados y rutas seguras para maximizar ganancias."
+  },
+  {
+    "id": "cap_prudente",
+    "name": "Martín de Retana",
+    "title": "Capitán Prudente",
+    "rarity": "Poco Común",
+    "upkeep": 30,
+    "cost": { "gold": 600, "crew": 1 },
+    "stats": {
+      "tradeBonus": 0.05,
+      "riskReduction": 0.25,
+      "speedBonus": -1,
+      "defenseBonus": 0.10
+    },
+    "description": "Navega con cautela y rehúsa correr riesgos innecesarios. Excelente para transportar mercancías valiosas."
+  },
+  {
+    "id": "cap_corsario",
+    "name": "Inés de Basto",
+    "title": "Corsaria Astuta",
+    "rarity": "Raro",
+    "upkeep": 50,
+    "cost": { "gold": 1000, "crew": 1 },
+    "stats": {
+      "tradeBonus": 0.10,
+      "riskReduction": 0.05,
+      "speedBonus": 2,
+      "defenseBonus": 0.15
+    },
+    "description": "Antigua navegante independiente con patente de corso. Rápida en maniobras e intrépida en combate."
+  },
+  {
+    "id": "cap_veterano",
+    "name": "Blas de Lezo (Joven)",
+    "title": "Capitán Veterano",
+    "rarity": "Épico",
+    "upkeep": 80,
+    "cost": { "gold": 2000, "crew": 1 },
+    "stats": {
+      "tradeBonus": 0.10,
+      "riskReduction": 0.20,
+      "speedBonus": 1,
+      "defenseBonus": 0.30
+    },
+    "description": "Oficial curtido en múltiples batallas navales contra ingleses y franceses. Su liderazgo es legendario."
+  }
+]

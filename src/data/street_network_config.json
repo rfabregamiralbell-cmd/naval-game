@@ -1,0 +1,21 @@
+{
+  "nodes": [
+    { "id": "node_port", "coordinates": [-75.549, 10.423], "name": "Puerto" },
+    { "id": "node_center", "coordinates": [-75.545, 10.422], "name": "Plaza de la Aduana" },
+    { "id": "node_plaza_mayor", "coordinates": [-75.543, 10.425], "name": "Plaza Mayor" },
+    { "id": "node_arsenal", "coordinates": [-75.541, 10.418], "name": "Arsenal" },
+    { "id": "node_gate", "coordinates": [-75.539, 10.428], "name": "Puerta del Reloj" },
+    { "id": "node_getsemani", "coordinates": [-75.540, 10.420], "name": "Getsemaní" },
+    { "id": "node_fort", "coordinates": [-75.547, 10.415], "name": "Fuerte" }
+  ],
+  "edges": [
+    { "source": "node_port", "target": "node_center", "type": "main" },
+    { "source": "node_center", "target": "node_plaza_mayor", "type": "main" },
+    { "source": "node_plaza_mayor", "target": "node_gate", "type": "main" },
+    { "source": "node_center", "target": "node_arsenal", "type": "main" },
+    { "source": "node_arsenal", "target": "node_getsemani", "type": "secondary" },
+    { "source": "node_center", "target": "node_getsemani", "type": "main" },
+    { "source": "node_port", "target": "node_fort", "type": "secondary" },
+    { "source": "node_arsenal", "target": "node_fort", "type": "secondary" }
+  ]
+}

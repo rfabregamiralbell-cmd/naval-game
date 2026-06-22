@@ -1,0 +1,47 @@
+{
+  "1": {
+    "level": 1,
+    "docks": 1,
+    "maxShipSize": "pequeño",
+    "allowedTypes": ["balandra", "goleta"],
+    "maxSimultaneousShips": 1,
+    "commercialCapacity": "baja",
+    "description": "Puerto básico con un muelle de madera para embarcaciones ligeras."
+  },
+  "2": {
+    "level": 2,
+    "docks": 2,
+    "maxShipSize": "mediano",
+    "allowedTypes": ["balandra", "goleta", "bergantin", "mercante"],
+    "maxSimultaneousShips": 2,
+    "commercialCapacity": "media",
+    "description": "Dique reforzado y espigón de piedra con dos grúas manuales de carga."
+  },
+  "3": {
+    "level": 3,
+    "docks": 3,
+    "maxShipSize": "grande",
+    "allowedTypes": ["balandra", "goleta", "bergantin", "mercante", "corbeta", "fragata"],
+    "maxSimultaneousShips": 3,
+    "commercialCapacity": "alta",
+    "description": "Puerto mercantil de piedra de sillería con almacenes portuarios integrados."
+  },
+  "4": {
+    "level": 4,
+    "docks": 4,
+    "maxShipSize": "pesado",
+    "allowedTypes": ["balandra", "goleta", "bergantin", "mercante", "corbeta", "fragata", "navio_linea"],
+    "maxSimultaneousShips": 4,
+    "commercialCapacity": "muy alta",
+    "description": "Puerto fortificado y dársena profunda capaz de albergar buques de guerra pesados."
+  },
+  "5": {
+    "level": 5,
+    "docks": 6,
+    "maxShipSize": "militar",
+    "allowedTypes": ["balandra", "goleta", "bergantin", "mercante", "corbeta", "fragata", "navio_linea"],
+    "maxSimultaneousShips": 6,
+    "commercialCapacity": "máxima",
+    "description": "Gran Arsenal y Puerto Imperial, centro neurálgico del comercio del Caribe."
+  }
+}

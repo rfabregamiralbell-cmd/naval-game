@@ -1,0 +1,29 @@
+{
+  "velas_reforzadas": {
+    "id": "velas_reforzadas",
+    "name": "Velas reforzadas",
+    "description": "Doble costura en el dobladillo para soportar vientos fuertes e incrementar la velocidad.",
+    "cost": { "gold": 300, "sails": 50 },
+    "effect": { "type": "speed_bonus", "value": 2 },
+    "requiredResearch": "jarcia_reforzada",
+    "icon": "⛵"
+  },
+  "casco_reforzado": {
+    "id": "casco_reforzado",
+    "name": "Casco reforzado",
+    "description": "Forrado de tablones de roble adicionales para absorber impactos.",
+    "cost": { "gold": 500, "wood": 100 },
+    "effect": { "type": "defense_bonus", "value": 15 },
+    "requiredResearch": null,
+    "icon": "🛡️"
+  },
+  "bodega_ampliada": {
+    "id": "bodega_ampliada",
+    "name": "Bodega ampliada",
+    "description": "Optimización del espacio de carga interna removiendo mamparos secundarios.",
+    "cost": { "gold": 400, "wood": 80 },
+    "effect": { "type": "cargo_bonus", "value": 50 },
+    "requiredResearch": null,
+    "icon": "📦"
+  }
+}

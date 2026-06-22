@@ -1,0 +1,24 @@
+{
+  "base": {
+    "morale": 70,
+    "stability": 70,
+    "health": 70,
+    "order": 70
+  },
+  "effects": {
+    "morale": {
+      "highThreshold": 80,
+      "highBonus": 0.1,
+      "lowThreshold": 40,
+      "lowPenalty": -0.1
+    },
+    "health": {
+      "lowThreshold": 40,
+      "growthPenalty": 0.5
+    },
+    "order": {
+      "lowThreshold": 40,
+      "warning": "¡Riesgo inminente de disturbios populares!"
+    }
+  }
+}

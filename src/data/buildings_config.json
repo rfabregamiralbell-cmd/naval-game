@@ -1,0 +1,686 @@
+{
+  "cabildo": {
+    "id": "cabildo",
+    "name": "Cabildo",
+    "category": "LAND_ONLY",
+    "role": "government",
+    "workerAreaFactor": 50,
+    "populationAreaFactor": 30,
+    "description": "Gobierno de la ciudad. Aumenta el límite de distritos y desbloquea nuevas tecnologías y edificios.",
+    "dependencyText": "Ninguna",
+    "unlocksText": "Nivel de ciudad y nuevos distritos",
+    "terrainRules": {
+      "requiresDryLand": true,
+      "forbidden": ["water", "wetland", "mangrove"]
+    },
+    "visual": {
+      "icon": "🏛️",
+      "fillColor": "#708090",
+      "strokeColor": "#a9a9a9"
+    },
+    "levels": {
+      "1": {
+        "title": "Cabildo local",
+        "maxWorkers": 30,
+        "baseProduction": {},
+        "maintenance": { "gold": 10 },
+        "buildDurationSec": 300,
+        "cost": { "gold": 500, "wood": 200 },
+        "requirements": {}
+      },
+      "2": {
+        "title": "Ayuntamiento de villa",
+        "maxWorkers": 90,
+        "baseProduction": {},
+        "maintenance": { "gold": 25 },
+        "buildDurationSec": 3600,
+        "cost": { "gold": 2000, "wood": 800, "materials": 200 },
+        "requirements": {}
+      },
+      "3": {
+        "title": "Palacio de cabildo real",
+        "maxWorkers": 180,
+        "baseProduction": {},
+        "maintenance": { "gold": 60 },
+        "buildDurationSec": 28800,
+        "cost": { "gold": 6000, "wood": 2000, "materials": 600, "stone": 300 },
+        "requirements": {}
+      },
+      "4": {
+        "title": "Intendencia regional",
+        "maxWorkers": 300,
+        "baseProduction": {},
+        "maintenance": { "gold": 120 },
+        "buildDurationSec": 172800,
+        "cost": { "gold": 15000, "wood": 4000, "materials": 1500, "stone": 800, "iron": 300 },
+        "requirements": {}
+      },
+      "5": {
+        "title": "Capitanía General",
+        "maxWorkers": 9999,
+        "baseProduction": {},
+        "maintenance": { "gold": 250 },
+        "buildDurationSec": 864000,
+        "cost": { "gold": 40000, "wood": 10000, "materials": 4000, "stone": 2000, "iron": 1000, "tools": 200 },
+        "requirements": {}
+      }
+    }
+  },
+  "hacienda": {
+    "id": "hacienda",
+    "name": "Hacienda Agrícola",
+    "category": "AGRICULTURE_ONLY",
+    "role": "production",
+    "resourceProduced": "goods",
+    "outputs": ["goods"],
+    "futureOutputs": ["sugar", "tobacco", "cacao", "cotton", "grain"],
+    "workerAreaFactor": 80,
+    "populationAreaFactor": 150,
+    "costPerM2": { "gold": 0.1, "wood": 0.05 },
+    "baseCost": { "gold": 400, "wood": 100 },
+    "description": "Produce bienes agrícolas coloniales. Requiere tierra seca y beneficia al comercio.",
+    "dependencyText": "Mejora con Camino Interior",
+    "unlocksText": "Bienes coloniales para exportar",
+    "terrainRules": {
+      "requiresDryLand": true,
+      "forbidden": ["water", "wetland", "mangrove"]
+    },
+    "visual": {
+      "icon": "🌾",
+      "fillColor": "#8b9045",
+      "strokeColor": "#b8c875"
+    },
+    "levels": {
+      "1": {
+        "title": "Finca básica",
+        "maxWorkers": 30,
+        "baseProduction": { "goods": 5 },
+        "maintenance": { "gold": 1 },
+        "buildDurationSec": 120,
+        "cost": { "gold": 400, "wood": 100 },
+        "requirements": { "cabildoLevel": 1 }
+      },
+      "2": {
+        "title": "Plantación organizada",
+        "maxWorkers": 90,
+        "baseProduction": { "goods": 15 },
+        "maintenance": { "gold": 4 },
+        "buildDurationSec": 1800,
+        "cost": { "gold": 600, "wood": 200, "materials": 100 },
+        "requirements": { "cabildoLevel": 2, "caminoLevel": 1 }
+      },
+      "3": {
+        "title": "Gran explotación",
+        "maxWorkers": 180,
+        "baseProduction": { "goods": 40 },
+        "maintenance": { "gold": 10 },
+        "buildDurationSec": 14400,
+        "cost": { "gold": 1200, "wood": 400, "materials": 250, "tools": 30 },
+        "requirements": { "cabildoLevel": 2, "caminoLevel": 2, "almacenLevel": 1 }
+      },
+      "4": {
+        "title": "Complejo agrícola",
+        "maxWorkers": 300,
+        "baseProduction": { "goods": 90 },
+        "maintenance": { "gold": 20 },
+        "buildDurationSec": 86400,
+        "cost": { "gold": 2500, "wood": 800, "materials": 500, "tools": 80 },
+        "requirements": { "cabildoLevel": 3, "caminoLevel": 3, "almacenLevel": 2, "aduanaLevel": 1 }
+      },
+      "5": {
+        "title": "Compañía agrícola regional",
+        "maxWorkers": 9999,
+        "baseProduction": { "goods": 200 },
+        "maintenance": { "gold": 45 },
+        "buildDurationSec": 432000,
+        "cost": { "gold": 6000, "wood": 1500, "materials": 1000, "tools": 200 },
+        "requirements": { "cabildoLevel": 3, "caminoLevel": 4, "almacenLevel": 3, "aduanaLevel": 2 }
+      }
+    }
+  },
+  "gremio": {
+    "id": "gremio",
+    "name": "Gremio de Artesanos",
+    "category": "LAND_ONLY",
+    "role": "production",
+    "resourceProduced": "wood",
+    "outputs": ["wood", "materials"],
+    "futureOutputs": ["tools", "barrels"],
+    "workerAreaFactor": 80,
+    "populationAreaFactor": 150,
+    "costPerM2": { "gold": 0.1, "wood": 0.05 },
+    "baseCost": { "gold": 400, "wood": 100 },
+    "description": "Produce madera y materiales. Reduce los tiempos de construcción y mantenimiento.",
+    "dependencyText": "Ninguna",
+    "unlocksText": "Materiales de construcción y mejoras navales",
+    "terrainRules": {
+      "requiresDryLand": true,
+      "forbidden": ["water", "wetland", "mangrove"]
+    },
+    "visual": {
+      "icon": "⚒️",
+      "fillColor": "#b86b32",
+      "strokeColor": "#d08a4a"
+    },
+    "levels": {
+      "1": {
+        "title": "Talleres artesanales",
+        "maxWorkers": 30,
+        "baseProduction": { "wood": 3, "materials": 1 },
+        "maintenance": { "gold": 2 },
+        "buildDurationSec": 180,
+        "cost": { "gold": 400, "wood": 100 },
+        "requirements": { "cabildoLevel": 1 }
+      },
+      "2": {
+        "title": "Gremio consolidado",
+        "maxWorkers": 90,
+        "baseProduction": { "wood": 10, "materials": 3 },
+        "maintenance": { "gold": 5 },
+        "buildDurationSec": 2700,
+        "cost": { "gold": 800, "wood": 250, "materials": 150 },
+        "requirements": { "cabildoLevel": 2 }
+      },
+      "3": {
+        "title": "Manufactura urbana",
+        "maxWorkers": 180,
+        "baseProduction": { "wood": 25, "materials": 8 },
+        "maintenance": { "gold": 12 },
+        "buildDurationSec": 21600,
+        "cost": { "gold": 1800, "wood": 500, "materials": 350, "tools": 40 },
+        "requirements": { "cabildoLevel": 2, "caminoLevel": 1 }
+      },
+      "4": {
+        "title": "Real Fábrica",
+        "maxWorkers": 300,
+        "baseProduction": { "wood": 60, "materials": 20 },
+        "maintenance": { "gold": 25 },
+        "buildDurationSec": 129600,
+        "cost": { "gold": 4000, "wood": 1000, "materials": 800, "tools": 100, "iron": 50 },
+        "requirements": { "cabildoLevel": 3, "caminoLevel": 2 }
+      },
+      "5": {
+        "title": "Distrito Industrial",
+        "maxWorkers": 9999,
+        "baseProduction": { "wood": 150, "materials": 50 },
+        "maintenance": { "gold": 50 },
+        "buildDurationSec": 604800,
+        "cost": { "gold": 9000, "wood": 2000, "materials": 1500, "tools": 250, "iron": 150 },
+        "requirements": { "cabildoLevel": 3, "caminoLevel": 3 }
+      }
+    }
+  },
+  "almacen": {
+    "id": "almacen",
+    "name": "Almacenes de Depósito",
+    "category": "LAND_ONLY",
+    "role": "storage",
+    "storageBonus": ["wood", "materials", "goods", "sails", "cannons", "gunpowder"],
+    "workerAreaFactor": 100,
+    "populationAreaFactor": 200,
+    "costPerM2": { "gold": 0.15, "wood": 0.1 },
+    "baseCost": { "gold": 350, "wood": 150 },
+    "description": "Aumenta la capacidad de almacenamiento de bienes y materiales, evitando pérdidas.",
+    "dependencyText": "Ninguna",
+    "unlocksText": "Almacenamiento de rutas comerciales",
+    "terrainRules": {
+      "requiresDryLand": true,
+      "forbidden": ["water", "wetland", "mangrove"]
+    },
+    "visual": {
+      "icon": "📦",
+      "fillColor": "#808080",
+      "strokeColor": "#a9a9a9"
+    },
+    "levels": {
+      "1": {
+        "title": "Tinglado básico",
+        "maxWorkers": 30,
+        "baseProduction": {},
+        "maintenance": { "gold": 1 },
+        "buildDurationSec": 180,
+        "cost": { "gold": 350, "wood": 150 },
+        "requirements": { "cabildoLevel": 1 }
+      },
+      "2": {
+        "title": "Almacén portuario",
+        "maxWorkers": 90,
+        "baseProduction": {},
+        "maintenance": { "gold": 3 },
+        "buildDurationSec": 2700,
+        "cost": { "gold": 750, "wood": 300, "materials": 120 },
+        "requirements": { "cabildoLevel": 1 }
+      },
+      "3": {
+        "title": "Depósito de aduana",
+        "maxWorkers": 180,
+        "baseProduction": {},
+        "maintenance": { "gold": 8 },
+        "buildDurationSec": 21600,
+        "cost": { "gold": 1600, "wood": 600, "materials": 300, "stone": 100 },
+        "requirements": { "cabildoLevel": 2 }
+      },
+      "4": {
+        "title": "Bodegas imperiales",
+        "maxWorkers": 300,
+        "baseProduction": {},
+        "maintenance": { "gold": 18 },
+        "buildDurationSec": 129600,
+        "cost": { "gold": 3500, "wood": 1200, "materials": 700, "stone": 300, "iron": 100 },
+        "requirements": { "cabildoLevel": 2, "gremioLevel": 2 }
+      },
+      "5": {
+        "title": "Factoría comercial",
+        "maxWorkers": 9999,
+        "baseProduction": {},
+        "maintenance": { "gold": 35 },
+        "buildDurationSec": 604800,
+        "cost": { "gold": 8000, "wood": 2500, "materials": 1500, "stone": 800, "iron": 300 },
+        "requirements": { "cabildoLevel": 3, "gremioLevel": 3 }
+      }
+    }
+  },
+  "aduana": {
+    "id": "aduana",
+    "name": "Aduana",
+    "category": "COASTAL_ONLY",
+    "role": "commerce",
+    "resourceProduced": "gold",
+    "inputs": ["goods"],
+    "outputs": ["gold"],
+    "workerAreaFactor": 80,
+    "populationAreaFactor": 100,
+    "costPerM2": { "gold": 0.2, "wood": 0.05 },
+    "baseCost": { "gold": 300, "wood": 50 },
+    "description": "Convierte bienes coloniales en oro de exportación legal. Reduce el contrabando.",
+    "dependencyText": "Necesita Almacenes para aumentar comercio",
+    "unlocksText": "Impuestos y rutas comerciales marítimas",
+    "terrainRules": {
+      "requiresDryLand": true,
+      "forbidden": ["water", "wetland", "mangrove"]
+    },
+    "visual": {
+      "icon": "⚖️",
+      "fillColor": "#d4af37",
+      "strokeColor": "#f0cc65"
+    },
+    "levels": {
+      "1": {
+        "title": "Aduana local",
+        "maxWorkers": 30,
+        "baseProduction": { "gold": 15 },
+        "baseConsumption": { "goods": 3 },
+        "maintenance": { "gold": 3 },
+        "buildDurationSec": 300,
+        "cost": { "gold": 300, "wood": 50 },
+        "requirements": { "cabildoLevel": 1, "puertoLevel": 1 }
+      },
+      "2": {
+        "title": "Aduana mayor",
+        "maxWorkers": 90,
+        "baseProduction": { "gold": 50 },
+        "baseConsumption": { "goods": 10 },
+        "maintenance": { "gold": 8 },
+        "buildDurationSec": 3600,
+        "cost": { "gold": 800, "wood": 150, "materials": 100 },
+        "requirements": { "cabildoLevel": 2, "almacenLevel": 1 }
+      },
+      "3": {
+        "title": "Casa de contratación",
+        "maxWorkers": 180,
+        "baseProduction": { "gold": 125 },
+        "baseConsumption": { "goods": 25 },
+        "maintenance": { "gold": 18 },
+        "buildDurationSec": 28800,
+        "cost": { "gold": 2000, "wood": 300, "materials": 250, "stone": 100 },
+        "requirements": { "cabildoLevel": 2, "almacenLevel": 2 }
+      },
+      "4": {
+        "title": "Consulado mercantil",
+        "maxWorkers": 300,
+        "baseProduction": { "gold": 300 },
+        "baseConsumption": { "goods": 60 },
+        "maintenance": { "gold": 35 },
+        "buildDurationSec": 172800,
+        "cost": { "gold": 5000, "wood": 800, "materials": 600, "stone": 300, "iron": 100 },
+        "requirements": { "cabildoLevel": 3, "almacenLevel": 3 }
+      },
+      "5": {
+        "title": "Monopolio comercial real",
+        "maxWorkers": 9999,
+        "baseProduction": { "gold": 750 },
+        "baseConsumption": { "goods": 150 },
+        "maintenance": { "gold": 75 },
+        "buildDurationSec": 864000,
+        "cost": { "gold": 12000, "wood": 2000, "materials": 1200, "stone": 600, "iron": 300 },
+        "requirements": { "cabildoLevel": 3, "almacenLevel": 4 }
+      }
+    }
+  },
+  "puerto": {
+    "id": "puerto",
+    "name": "Puerto Comercial",
+    "category": "COASTAL_ONLY",
+    "role": "naval",
+    "resourceProduced": "none",
+    "handles": ["goods", "colonialGoods", "manufacturedGoods"],
+    "workerAreaFactor": 80,
+    "populationAreaFactor": 120,
+    "costPerM2": { "gold": 0.25, "wood": 0.15 },
+    "baseCost": { "gold": 500, "wood": 250 },
+    "description": "Desbloquea rutas comerciales marítimas y permite la carga/descarga de convoyes.",
+    "dependencyText": "Necesita Arsenal para rutas protegidas",
+    "unlocksText": "Flota mercante y rutas comerciales",
+    "terrainRules": {
+      "requiresDryLand": true,
+      "forbidden": ["water", "wetland", "mangrove"]
+    },
+    "visual": {
+      "icon": "⛵",
+      "fillColor": "#4682b4",
+      "strokeColor": "#7fb0d6"
+    },
+    "levels": {
+      "1": {
+        "title": "Muelle pequeño",
+        "maxWorkers": 30,
+        "baseProduction": {},
+        "maintenance": { "gold": 4 },
+        "buildDurationSec": 600,
+        "cost": { "gold": 500, "wood": 250 },
+        "requirements": { "cabildoLevel": 1 }
+      },
+      "2": {
+        "title": "Puerto comercial",
+        "maxWorkers": 90,
+        "baseProduction": {},
+        "maintenance": { "gold": 12 },
+        "buildDurationSec": 5400,
+        "cost": { "gold": 1200, "wood": 500, "materials": 200 },
+        "requirements": { "cabildoLevel": 2, "almacenLevel": 1 }
+      },
+      "3": {
+        "title": "Dársena portuaria",
+        "maxWorkers": 180,
+        "baseProduction": {},
+        "maintenance": { "gold": 25 },
+        "buildDurationSec": 36000,
+        "cost": { "gold": 3000, "wood": 1000, "materials": 500, "stone": 200, "iron": 100, "anchors": 2, "rope": 40 },
+        "requirements": { "cabildoLevel": 2, "almacenLevel": 2 }
+      },
+      "4": {
+        "title": "Puerto fortificado",
+        "maxWorkers": 300,
+        "baseProduction": {},
+        "maintenance": { "gold": 50 },
+        "buildDurationSec": 216000,
+        "cost": { "gold": 8000, "wood": 2000, "materials": 1000, "stone": 500, "iron": 250, "anchors": 6, "rope": 100 },
+        "requirements": { "cabildoLevel": 3, "almacenLevel": 3, "fortalezaLevel": 2 }
+      },
+      "5": {
+        "title": "Puerto imperial de Indias",
+        "maxWorkers": 9999,
+        "baseProduction": {},
+        "maintenance": { "gold": 100 },
+        "buildDurationSec": 1036800,
+        "cost": { "gold": 20000, "wood": 5000, "materials": 2500, "stone": 1200, "iron": 600, "anchors": 15, "rope": 250 },
+        "requirements": { "cabildoLevel": 3, "almacenLevel": 4, "fortalezaLevel": 3 }
+      }
+    }
+  },
+  "arsenal": {
+    "id": "arsenal",
+    "name": "Arsenal",
+    "category": "WATER_ADJACENT",
+    "role": "shipyard",
+    "resourceProduced": "sails",
+    "outputs": ["sails", "spareParts"],
+    "futureInputs": ["wood", "materials", "iron", "canvas", "rope"],
+    "workerAreaFactor": 80,
+    "populationAreaFactor": 100,
+    "costPerM2": { "gold": 0.2, "wood": 0.05 },
+    "baseCost": { "gold": 600, "wood": 200 },
+    "description": "Construye y repara embarcaciones. Aumenta la capacidad de escoltas militares.",
+    "dependencyText": "Necesita Gremio para mejorar producción naval",
+    "unlocksText": "Construcción de barcos de guerra y mercantes",
+    "terrainRules": {
+      "requiresDryLand": true,
+      "forbidden": ["water", "wetland", "mangrove"]
+    },
+    "visual": {
+      "icon": "⚓",
+      "fillColor": "#4682b4",
+      "strokeColor": "#7fb0d6"
+    },
+    "levels": {
+      "1": {
+        "title": "Astillero civil",
+        "maxWorkers": 30,
+        "baseProduction": { "sails": 1, "spareParts": 2 },
+        "maintenance": { "gold": 5 },
+        "buildDurationSec": 900,
+        "cost": { "gold": 600, "wood": 200 },
+        "requirements": { "cabildoLevel": 1, "puertoLevel": 1 }
+      },
+      "2": {
+        "title": "Arsenal naval de villa",
+        "maxWorkers": 90,
+        "baseProduction": { "sails": 3, "spareParts": 6 },
+        "maintenance": { "gold": 15 },
+        "buildDurationSec": 7200,
+        "cost": { "gold": 1500, "wood": 400, "materials": 150 },
+        "requirements": { "cabildoLevel": 2, "gremioLevel": 1 }
+      },
+      "3": {
+        "title": "Arsenal real",
+        "maxWorkers": 180,
+        "baseProduction": { "sails": 8, "spareParts": 15 },
+        "maintenance": { "gold": 35 },
+        "buildDurationSec": 43200,
+        "cost": { "gold": 3600, "wood": 1000, "materials": 400, "navalWood": 150, "sails": 10, "rope": 50, "iron": 80, "tools": 30, "cannons": 4 },
+        "requirements": { "cabildoLevel": 2, "gremioLevel": 2 }
+      },
+      "4": {
+        "title": "Complejo naval ilustrado",
+        "maxWorkers": 300,
+        "baseProduction": { "sails": 20, "spareParts": 40 },
+        "maintenance": { "gold": 70 },
+        "buildDurationSec": 259200,
+        "cost": { "gold": 9000, "wood": 2200, "materials": 900, "navalWood": 400, "sails": 25, "rope": 120, "iron": 200, "tools": 80, "cannons": 10 },
+        "requirements": { "cabildoLevel": 3, "gremioLevel": 3 }
+      },
+      "5": {
+        "title": "Base de la Armada Real",
+        "maxWorkers": 9999,
+        "baseProduction": { "sails": 50, "spareParts": 100 },
+        "maintenance": { "gold": 150 },
+        "buildDurationSec": 1209600,
+        "cost": { "gold": 20000, "wood": 5000, "materials": 2000, "navalWood": 1000, "sails": 60, "rope": 300, "iron": 500, "tools": 200, "cannons": 25 },
+        "requirements": { "cabildoLevel": 3, "gremioLevel": 4 }
+      }
+    }
+  },
+  "fortaleza": {
+    "id": "fortaleza",
+    "name": "Fortaleza",
+    "category": "LAND_ONLY",
+    "role": "defense",
+    "uses": ["cannons", "gunpowder", "soldiers"],
+    "workerAreaFactor": 90,
+    "populationAreaFactor": 120,
+    "costPerM2": { "gold": 0.3, "wood": 0.1 },
+    "baseCost": { "gold": 800, "wood": 300 },
+    "description": "Protege el puerto y reduce el riesgo de convoyes comerciales frente a incursiones.",
+    "dependencyText": "Protección insuficiente para convoyes grandes",
+    "unlocksText": "Protección costera y escolta portuaria",
+    "terrainRules": {
+      "requiresDryLand": true,
+      "forbidden": ["water", "wetland", "mangrove"]
+    },
+    "visual": {
+      "icon": "🏰",
+      "fillColor": "#5c5c5c",
+      "strokeColor": "#8c8c8c"
+    },
+    "levels": {
+      "1": {
+        "title": "Batería costera",
+        "maxWorkers": 30,
+        "baseProduction": {},
+        "maintenance": { "gold": 6 },
+        "buildDurationSec": 1200,
+        "cost": { "gold": 800, "wood": 300 },
+        "requirements": { "cabildoLevel": 1 }
+      },
+      "2": {
+        "title": "Fuerte amurallado",
+        "maxWorkers": 90,
+        "baseProduction": {},
+        "maintenance": { "gold": 18 },
+        "buildDurationSec": 7200,
+        "cost": { "gold": 2000, "wood": 600, "materials": 250 },
+        "requirements": { "cabildoLevel": 2 }
+      },
+      "3": {
+        "title": "Fortaleza abaluartada",
+        "maxWorkers": 180,
+        "baseProduction": {},
+        "maintenance": { "gold": 40 },
+        "buildDurationSec": 43200,
+        "cost": { "gold": 5000, "wood": 1200, "materials": 500, "stone": 300, "iron": 150, "cannons": 5, "gunpowder": 20, "soldiers": 10 },
+        "requirements": { "cabildoLevel": 2, "arsenalLevel": 1 }
+      },
+      "4": {
+        "title": "Sistema fortificado",
+        "maxWorkers": 300,
+        "baseProduction": {},
+        "maintenance": { "gold": 85 },
+        "buildDurationSec": 259200,
+        "cost": { "gold": 12000, "wood": 2500, "materials": 1200, "stone": 800, "iron": 300, "cannons": 15, "gunpowder": 50, "soldiers": 25 },
+        "requirements": { "cabildoLevel": 3, "arsenalLevel": 2 }
+      },
+      "5": {
+        "title": "Defensa regional inexpugnable",
+        "maxWorkers": 9999,
+        "baseProduction": {},
+        "maintenance": { "gold": 180 },
+        "buildDurationSec": 1209600,
+        "cost": { "gold": 30000, "wood": 6000, "materials": 3000, "stone": 2000, "iron": 800, "cannons": 40, "gunpowder": 150, "soldiers": 60 },
+        "requirements": { "cabildoLevel": 3, "arsenalLevel": 3 }
+      }
+    }
+  },
+  "camino": {
+    "id": "camino",
+    "name": "Camino Interior",
+    "category": "LAND_ONLY",
+    "role": "logistics",
+    "transports": ["goods", "wood", "silver", "grain", "leather"],
+    "workerAreaFactor": 60,
+    "populationAreaFactor": 120,
+    "costPerM2": { "gold": 0.08, "wood": 0.04 },
+    "baseCost": { "gold": 250, "wood": 80 },
+    "description": "Ruta terrestre comercial. Conecta haciendas interiores y reduce pérdidas de transporte.",
+    "dependencyText": "Ninguna",
+    "unlocksText": "Niveles superiores de haciendas",
+    "terrainRules": {
+      "requiresDryLand": true,
+      "forbidden": ["water", "wetland", "mangrove"]
+    },
+    "visual": {
+      "icon": "🛣️",
+      "fillColor": "#8b5a2b",
+      "strokeColor": "#cd853f"
+    },
+    "levels": {
+      "1": {
+        "title": "Camino de mulas",
+        "maxWorkers": 30,
+        "baseProduction": {},
+        "maintenance": { "gold": 1 },
+        "buildDurationSec": 60,
+        "cost": { "gold": 250, "wood": 80 },
+        "requirements": { "cabildoLevel": 1 }
+      },
+      "2": {
+        "title": "Ruta de postas",
+        "maxWorkers": 90,
+        "baseProduction": {},
+        "maintenance": { "gold": 3 },
+        "buildDurationSec": 900,
+        "cost": { "gold": 500, "wood": 150, "materials": 50 },
+        "requirements": { "cabildoLevel": 2 }
+      },
+      "3": {
+        "title": "Línea de diligencias",
+        "maxWorkers": 180,
+        "baseProduction": {},
+        "maintenance": { "gold": 7 },
+        "buildDurationSec": 7200,
+        "cost": { "gold": 1200, "wood": 300, "materials": 150, "stone": 50 },
+        "requirements": { "cabildoLevel": 2 }
+      },
+      "4": {
+        "title": "Camino Real empedrado",
+        "maxWorkers": 300,
+        "baseProduction": {},
+        "maintenance": { "gold": 15 },
+        "buildDurationSec": 43200,
+        "cost": { "gold": 3000, "wood": 700, "materials": 400, "stone": 200 },
+        "requirements": { "cabildoLevel": 3 }
+      },
+      "5": {
+        "title": "Canal fluvial de transporte",
+        "maxWorkers": 9999,
+        "baseProduction": {},
+        "maintenance": { "gold": 30 },
+        "buildDurationSec": 259200,
+        "cost": { "gold": 8000, "wood": 1500, "materials": 800, "stone": 500, "iron": 100 },
+        "requirements": { "cabildoLevel": 3 }
+      }
+    }
+  },
+  "taberna": {
+    "id": "taberna",
+    "name": "Taberna",
+    "category": "LAND_ONLY",
+    "role": "crew",
+    "outputs": ["crew"],
+    "uses": ["rum", "gold"],
+    "description": "Atrae marineros y pilotos experimentados. Recluta tripulación y obtiene rumores comerciales. (Próximamente)",
+    "visual": { "icon": "🍻", "fillColor": "#8b6508", "strokeColor": "#cd9b1d" },
+    "locked": true
+  },
+  "catedral": {
+    "id": "catedral",
+    "name": "Catedral / Iglesia",
+    "category": "LAND_ONLY",
+    "role": "morale",
+    "outputs": ["morale", "stability"],
+    "description": "Gran centro de fe colonial. Aumenta la moral de la población, reduce disturbios y atrae inmigración. (Próximamente)",
+    "visual": { "icon": "⛪", "fillColor": "#483d8b", "strokeColor": "#6a5acd" },
+    "locked": true
+  },
+  "hospital": {
+    "id": "hospital",
+    "name": "Hospital",
+    "category": "LAND_ONLY",
+    "role": "health",
+    "outputs": ["health", "recovery"],
+    "uses": ["medicine", "gold"],
+    "description": "Atiende a heridos y enfermos. Reduce la mortandad de tripulación y epidemias. (Próximamente)",
+    "visual": { "icon": "🏥", "fillColor": "#b22222", "strokeColor": "#cd5c5c" },
+    "locked": true
+  },
+  "universidad": {
+    "id": "universidad",
+    "name": "Universidad",
+    "category": "LAND_ONLY",
+    "role": "education",
+    "outputs": ["research", "efficiency"],
+    "uses": ["paper", "gold"],
+    "description": "Centro del saber colonial. Aumenta la capacidad de investigación y decretos. (Próximamente)",
+    "visual": { "icon": "🎓", "fillColor": "#191970", "strokeColor": "#4169e1" },
+    "locked": true
+  }
+}

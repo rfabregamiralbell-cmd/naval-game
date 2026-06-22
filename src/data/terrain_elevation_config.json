@@ -1,0 +1,26 @@
+{
+  "zones": [
+    {
+      "id": "cerro_san_felipe",
+      "name": "Cerro de San Felipe",
+      "elevation": 40,
+      "type": "hill",
+      "coordinates": [[[-75.540, 10.422], [-75.539, 10.424], [-75.538, 10.423], [-75.540, 10.422]]]
+    },
+    {
+      "id": "cerro_la_popa",
+      "name": "Cerro de La Popa",
+      "elevation": 148,
+      "type": "mountain",
+      "coordinates": [[[-75.530, 10.420], [-75.525, 10.425], [-75.520, 10.415], [-75.530, 10.420]]]
+    },
+    {
+      "id": "costa_muralla",
+      "name": "Frente Costero",
+      "elevation": 5,
+      "type": "coast",
+      "coordinates": [[[-75.552, 10.420], [-75.548, 10.428], [-75.545, 10.428], [-75.552, 10.420]]]
+    }
+  ],
+  "defaultElevation": 2
+}

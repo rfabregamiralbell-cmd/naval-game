@@ -1,0 +1,92 @@
+[
+  {
+    "id": "university",
+    "name": "Universidad",
+    "panel": "UniversityPanel",
+    "icon": "🎓",
+    "requiredDistrictTypes": ["universidad"],
+    "mapFocus": true,
+    "influenceType": "urban",
+    "description": "Investiga mejoras permanentes para potenciar la producción y reducir costes."
+  },
+  {
+    "id": "port",
+    "name": "Puerto",
+    "panel": "PortPanel",
+    "icon": "⛵",
+    "requiredDistrictTypes": ["puerto"],
+    "mapFocus": true,
+    "influenceType": "port",
+    "description": "Gestiona la capacidad portuaria, muelles y tamaño de barcos permitidos."
+  },
+  {
+    "id": "shipyard",
+    "name": "Astillero",
+    "panel": "ShipyardPanel",
+    "icon": "⚓",
+    "requiredDistrictTypes": ["arsenal"],
+    "mapFocus": true,
+    "influenceType": "naval",
+    "description": "Construye y modifica embarcaciones comerciales y de guerra para la flota."
+  },
+  {
+    "id": "warehouses",
+    "name": "Almacenes",
+    "panel": "WarehousePanel",
+    "icon": "📦",
+    "requiredDistrictTypes": ["almacen"],
+    "mapFocus": true,
+    "influenceType": "storage",
+    "description": "Supervisa el almacenamiento clasificado por categorías y evita pérdidas por saturación."
+  },
+  {
+    "id": "market",
+    "name": "Mercado de Bienes",
+    "panel": "GoodsMarketPanel",
+    "icon": "⚖️",
+    "requiredDistrictTypes": ["mercado", "aduana"],
+    "mapFocus": true,
+    "influenceType": "trade",
+    "description": "Compra materias primas y vende excedentes comerciales en la plaza local."
+  },
+  {
+    "id": "bank",
+    "name": "Banco y Finanzas",
+    "panel": "BankPanel",
+    "icon": "💰",
+    "requiredDistrictTypes": ["banco", "aduana"],
+    "mapFocus": true,
+    "influenceType": "trade",
+    "description": "Solicita préstamos reales de oro y gestiona la deuda soberana de la ciudad."
+  },
+  {
+    "id": "citylife",
+    "name": "Vida Urbana",
+    "panel": "CityLifePanel",
+    "icon": "🎭",
+    "requiredDistrictTypes": ["taberna", "iglesia", "hospital", "mercado"],
+    "mapFocus": true,
+    "influenceType": "urban",
+    "description": "Revisa la moral, orden público, estabilidad y salud de la población colonial."
+  },
+  {
+    "id": "crew",
+    "name": "Tripulación y Capitanes",
+    "panel": "CrewPanel",
+    "icon": "🧑‍✈️",
+    "requiredDistrictTypes": ["taberna", "puerto"],
+    "mapFocus": true,
+    "influenceType": "urban",
+    "description": "Contrata marineros, recluta capitanes ilustres y asígnalos a tus barcos."
+  },
+  {
+    "id": "defense",
+    "name": "Defensa y Militar",
+    "panel": "MilitaryDefensePanel",
+    "icon": "🛡️",
+    "requiredDistrictTypes": ["fortaleza", "bateria", "muralla"],
+    "mapFocus": true,
+    "influenceType": "military",
+    "description": "Revisa la cobertura militar, artillería y vulnerabilidades geográficas."
+  }
+]
